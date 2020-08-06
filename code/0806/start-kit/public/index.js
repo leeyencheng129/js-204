@@ -1,4 +1,4 @@
 const a = 1
-let b = 2 + a
+let b = 2 + a + (123)
 
-document.getElementById('text').innerHTML = b
+document.getElementById('text').innerHTML = document.getElementById('text').innerHTML+ document.getElementById('text').innerHTML+ b
