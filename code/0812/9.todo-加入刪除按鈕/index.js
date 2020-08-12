@@ -24,7 +24,9 @@ const toggleComplete = (id) => {
 }
 
 const deleteItem = (id) => {
+  // 用filter最為簡單
   const newTodos = todos.filter((v) => v.id !== +id)
+  // 為了刪除，把todos先改宣告為let，可以重新指定陣列
   todos = [...newTodos]
 }
 
@@ -47,20 +49,26 @@ const displayTodoList = () => {
   // join(合併陣列)
   todoList.innerHTML = `<ul>${displayTodoItems.join('')}</ul>`
 
+  // 加入事件處理於 工作完成按鈕
   const todoCompletedButtons = document.getElementsByClassName('todo-complete')
 
   for (let i = 0; i < todoCompletedButtons.length; i++) {
     todoCompletedButtons[i].addEventListener('click', (event) => {
+      // 切換狀態 更動todos陣列
       toggleComplete(event.target.dataset.id)
+      // 更新列表
       displayTodoList()
     })
   }
 
+  // 加入事件處理於 加入刪除按鈕
   const todoDeleteButtons = document.getElementsByClassName('todo-delete')
 
   for (let i = 0; i < todoCompletedButtons.length; i++) {
     todoDeleteButtons[i].addEventListener('click', (event) => {
+      // 更動todos陣列
       deleteItem(event.target.dataset.id)
+      // 更新列表
       displayTodoList()
     })
   }
