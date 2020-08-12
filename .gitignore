@@ -40,3 +40,7 @@ package-lock.json
 
 .idea
 .vscode
+
+doc/0812/array
+doc/0812/object
+doc/0812/function
