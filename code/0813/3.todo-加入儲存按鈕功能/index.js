@@ -39,7 +39,9 @@ const saveItem = (id, value) => {
   for (let i = 0; i < todos.length; i++) {
     // 傳入的id是字串，要轉為數字再比較
     if (todos[i].id === +id) {
+      // 文字轉為修改後的值
       todos[i].text = value
+      //切換編輯狀態
       todos[i].edited = !todos[i].edited
     }
   }
