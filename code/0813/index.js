@@ -116,5 +116,5 @@ todoInput.addEventListener('keypress', (event) => {
   }
 })
 
-// init
+// 應用程式初始化呼叫
 displayTodoList()
